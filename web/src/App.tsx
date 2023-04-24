@@ -1,9 +1,8 @@
 
 import { lchown } from 'fs';
 import { useState } from 'react';
-import styles from './App.module.less'
 import less from 'less';
-import { theme } from './themes/theme.js'
+import Chat from './pages/Chat';
 
 
 function App() {
@@ -17,9 +16,8 @@ function App() {
   }
 
   return (
-    <div className={styles.container}>
-      <button onClick={() => toggleTheme('dark')}>dark Theme</button>
-      <button onClick={() => toggleTheme('light')}>light Theme</button>
+    <div>
+      <Chat />
     </div>
   )
 }
