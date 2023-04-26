@@ -3,20 +3,16 @@ import { Avatar } from 'antd';
 import { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import styles from './index.module.less'
+import { useContent } from '../ContentProvider';
 
-interface IProps {
-  inputMessage: string;
-  outputMessage: string;
-}
 
 interface IMessage {
   type: 'input' | 'output'
   message: string
 }
 
-function RightContext(props: IProps) {
-  const { inputMessage, outputMessage } = props;
-
+function RightContext() {
+  const { inputMessage, outputMessage } = useContent();
 
   let [message, setMessage] = useState<IMessage[]>([]);
 
@@ -34,7 +30,6 @@ function RightContext(props: IProps) {
     }
   }, [outputMessage])
 
-  console.log(message)
   return (
     <div className={styles.container}>
       <div className={styles.chatContainer}>

@@ -491,6 +491,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@types/annyang@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.npmmirror.com/@types/annyang/-/annyang-2.6.2.tgz#9f780c31a3ccab64fa7b7b3d7b134f4cebac93ab"
+  integrity sha512-h+iMSThzFNRbMVb3FZEEoWnprtIiccpt65YcQwpkQlM8JsplmnONYsgATB1Tkko/dbwu1GyfNh1TN2CeGJ797w==
+
 "@types/less@^3.0.3":
   version "3.0.3"
   resolved "https://registry.npmmirror.com/@types/less/-/less-3.0.3.tgz#f9451dbb9548d25391107d65d6401a0cfb15db92"
@@ -548,6 +553,11 @@
     "@babel/plugin-transform-react-jsx-source" "^7.19.6"
     magic-string "^0.27.0"
     react-refresh "^0.14.0"
+
+annyang@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.npmmirror.com/annyang/-/annyang-2.6.1.tgz#93140d7014f268a9d6c4319505715b0469dec856"
+  integrity sha512-KfO6FVFmE7H7epXgAWRoGITShVqsDs6zLKuTxDiJHZmAVnpKeUAKiMUIr7hDXbNUOqRIB3RVTQQd/Yaf4ULauw==
 
 ansi-styles@^3.2.1:
   version "3.2.1"

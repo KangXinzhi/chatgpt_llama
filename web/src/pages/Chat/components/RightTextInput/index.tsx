@@ -1,20 +1,13 @@
 import { useState } from 'react';
-import { Input } from 'antd'
+import { FloatButton, Input, Spin, Tooltip } from 'antd'
 import { SendOutlined } from '@ant-design/icons';
 import styles from './index.module.less'
+import { useContent } from '../ContentProvider';
 
 const { TextArea } = Input;
 
-interface IProps {
-  setInputMessage: (inputMessage: string) => void;
-  setOutputMessage: (outputMessage: string) => void;
-}
-
-function RightTextInput(props: IProps) {
-  const {setInputMessage, setOutputMessage} = props;
-
-  const [msg, setMsg] = useState('')
-
+function RightTextInput() {
+  const { setInputMessage, setOutputMessage, isPressed,msg, setMsg } = useContent();
 
   const handleSend = () => {
     let temp = msg;
@@ -53,9 +46,20 @@ function RightTextInput(props: IProps) {
           value={msg}
           onChange={(e) => { setMsg(e.target.value) }}
           bordered={false}
+          style={{ width: '700px' }}
         />
       </div>
-      <SendOutlined onClick={handleSend} className={styles.sendIcon} />
+      <div className={styles.send}>
+        {
+          isPressed ? (
+            <Spin />
+          ) : (
+            <Tooltip title="发送">
+              <SendOutlined onClick={handleSend} />
+            </Tooltip>
+          )
+        }
+      </div>
     </div>
 
   )
