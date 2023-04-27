@@ -7,34 +7,10 @@ import { useContent } from '../ContentProvider';
 const { TextArea } = Input;
 
 function RightTextInput() {
-  const { setInputMessage, setOutputMessage, isPressed,msg, setMsg } = useContent();
+  const { openModel1, openModel2, msg, setMsg, handleSend } = useContent();
 
-  const handleSend = () => {
-    let temp = msg;
-    setInputMessage(JSON.stringify(msg))
-    setMsg('')
-    // 将api_url替换为你的API接口地址
-    const api_url = 'http://127.0.0.1:8000/predict';
+  const isPressed = openModel1 || openModel2
 
-    var testData = { prompt: temp };
-
-    // 发送POST请求
-    fetch(api_url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(testData)
-    })
-      .then(response => response.json())
-      .then(data => {
-        // 处理响应数据
-        setOutputMessage(JSON.stringify(data.response.response))
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
 
 
   return (

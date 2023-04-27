@@ -1,7 +1,7 @@
 
-import { FloatButton, Tooltip, Spin } from 'antd';
+import { FloatButton, Tooltip } from 'antd';
 
-import { AudioOutlined, QuestionOutlined, RobotOutlined } from '@ant-design/icons';
+import { AudioOutlined, QuestionOutlined, RobotOutlined, SoundOutlined  } from '@ant-design/icons';
 
 import { useContent } from '../ContentProvider';
 
@@ -9,7 +9,7 @@ import styles from './index.module.less'
 
 
 function AiFloatButton() {
-  const { handleOpenAudioModal, handleMouseDown, handleMouseUp } = useContent();
+  const { handleOpenAudioModal, handleMouseDown, handleMouseUp, handleAudioPlay } = useContent();
 
   return (
     <FloatButton.Group
@@ -27,6 +27,7 @@ function AiFloatButton() {
         </Tooltip>
       </div>
       <FloatButton icon={<QuestionOutlined />} onClick={handleOpenAudioModal} />
+      <FloatButton icon={<SoundOutlined />} onClick={handleAudioPlay} />
     </FloatButton.Group>
   )
 }
