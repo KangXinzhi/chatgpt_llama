@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import annyang from 'annyang'
 
 import SpeechRecognitionSingleton from '../../utils/SpeechRecognitionSingleton'
-import SpeechSynthesisSingleton from '../../utils/SpeechSynthesisSingleTOn'
+import SpeechSynthesisSingleton from '../../utils/SpeechSynthesisSingleton'
 
 interface Props {
   children: React.ReactNode
